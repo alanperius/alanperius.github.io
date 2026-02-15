@@ -1,27 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alan Perius - Developer</title>
-      <style>
-                body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
-                h1 { color: #333; }
-                .app { background: white; padding: 20px; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-                a { color: #1a73e8; }
-            </style>
-  </head>
-  <body>
-        <h1>Alan Perius - App Developer</h1>
-      <p>Welcome! Here you can find my Android applications.</p>
-      <div class="app">
-              <h2>ChefClip com IA</h2>
-              <p>AI-powered recipe app for cooking enthusiasts.</p>
-      </div>div>
-      <div class="app">
-              <h2>Radios Gauchas de Futebol</h2>
-              <p>Listen to football radio stations from Rio Grande do Sul.</p>
-      </div>div>
-      <p>Contact: <a href="mailto:alan.perius.mv@gmail.com">alan.perius.mv@gmail.com</a>a></p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Perius - App Developer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 1.1em;
+            color: #a0a0c0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        .app-card {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .app-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .app-card h2 {
+            font-size: 1.4em;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .app-card p {
+            color: #b0b0cc;
+            line-height: 1.6;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(106,90,205,0.3);
+            color: #c4b5fd;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 12px;
+        }
+        .store-link {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 8px 20px;
+            background: #6c63ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .store-link:hover { background: #5a52d5; }
+        .footer {
+            text-align: center;
+            padding: 30px 20px 50px;
+            color: #707090;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #8b85ff;
+            text-decoration: none;
+        }
+        .footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Alan Perius</h1>
+        <p>Android App Developer</p>
+    </div>
+    <div class="container">
+        <div class="app-card">
+            <h2>Radios Gauchas de Futebol</h2>
+            <p>Ouça as melhores rádios de futebol do Rio Grande do Sul ao vivo. Acompanhe os jogos do seu time gaúcho em tempo real.</p>
+            <span class="badge">Música e áudio</span><br>
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.alan.alanperius.radioalan" target="_blank">Ver na Google Play</a>
+        </div>
+        <div class="app-card">
+            <h2>ChefClip com IA</h2>
+            <p>Receitas com inteligência artificial para entusiastas da culinária. Descubra pratos personalizados com o poder da IA.</p>
+            <span class="badge">Comida e bebida</span><br>
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.alan.alanperius.chefclip" target="_blank">Ver na Google Play</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Contato: <a href="mailto:alan.perius.mv@gmail.com">alan.perius.mv@gmail.com</a></p>
+        <p style="margin-top: 8px;">© 2025 Alan Perius. Todos os direitos reservados.</p>
+    </div>
+</body>
 </html>
