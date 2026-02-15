@@ -15,6 +15,7 @@
         .header {
             text-align: center;
             padding: 60px 20px 40px;
+            position: relative;
         }
         .header h1 {
             font-size: 2.5em;
@@ -24,6 +25,31 @@
         .header p {
             font-size: 1.1em;
             color: #a0a0c0;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 1.3em;
+            transition: background 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+        .lang-btn.active {
+            background: rgba(108,99,255,0.4);
+            border-color: #6c63ff;
         }
         .container {
             max-width: 800px;
@@ -88,26 +114,49 @@
 </head>
 <body>
     <div class="header">
+        <div class="lang-switcher">
+            <span class="lang-btn active" onclick="setLang('pt')" title="Português">🇧🇷</span>
+            <span class="lang-btn" onclick="setLang('en')" title="English">🇺🇸</span>
+        </div>
         <h1>Alan Perius</h1>
-        <p>Android App Developer</p>
+        <p id="subtitle" data-pt="Desenvolvedor de Apps Android" data-en="Android App Developer">Desenvolvedor de Apps Android</p>
     </div>
     <div class="container">
         <div class="app-card">
             <h2>Radios Gauchas de Futebol</h2>
-            <p>Ouça as melhores rádios de futebol do Rio Grande do Sul ao vivo. Acompanhe os jogos do seu time gaúcho em tempo real.</p>
-            <span class="badge">Música e áudio</span><br>
-            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.alan.alanperius.radioalan" target="_blank">Ver na Google Play</a>
+            <p id="desc1" data-pt="Ouça as melhores rádios de futebol do Rio Grande do Sul ao vivo. Acompanhe os jogos do seu time gaúcho em tempo real." data-en="Listen to the best football radio stations from Rio Grande do Sul, Brazil. Follow your favorite team's games in real time.">Ouça as melhores rádios de futebol do Rio Grande do Sul ao vivo. Acompanhe os jogos do seu time gaúcho em tempo real.</p>
+            <span class="badge" id="badge1" data-pt="Música e áudio" data-en="Music & Audio">Música e áudio</span><br>
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.alan.alanperius.radioalan" target="_blank" id="link1" data-pt="Ver na Google Play" data-en="View on Google Play">Ver na Google Play</a>
         </div>
         <div class="app-card">
             <h2>ChefClip com IA</h2>
-            <p>Receitas com inteligência artificial para entusiastas da culinária. Descubra pratos personalizados com o poder da IA.</p>
-            <span class="badge">Comida e bebida</span><br>
-            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.alan.alanperius.chefclip" target="_blank">Ver na Google Play</a>
+            <p id="desc2" data-pt="Receitas com inteligência artificial para entusiastas da culinária. Descubra pratos personalizados com o poder da IA." data-en="AI-powered recipes for cooking enthusiasts. Discover personalized dishes with the power of artificial intelligence.">Receitas com inteligência artificial para entusiastas da culinária. Descubra pratos personalizados com o poder da IA.</p>
+            <span class="badge" id="badge2" data-pt="Comida e bebida" data-en="Food & Drink">Comida e bebida</span><br>
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.receitafacil.app" target="_blank" id="link2" data-pt="Ver na Google Play" data-en="View on Google Play">Ver na Google Play</a>
         </div>
     </div>
     <div class="footer">
-        <p>Contato: <a href="mailto:alan.perius.mv@gmail.com">alan.perius.mv@gmail.com</a></p>
-        <p style="margin-top: 8px;">© 2025 Alan Perius. Todos os direitos reservados.</p>
+        <p id="contact" data-pt="Contato: " data-en="Contact: "><span class="label">Contato: </span><a href="mailto:alan.perius.mv@gmail.com">alan.perius.mv@gmail.com</a></p>
+        <p style="margin-top: 8px;" id="copy" data-pt="© 2025 Alan Perius. Todos os direitos reservados." data-en="© 2025 Alan Perius. All rights reserved.">© 2025 Alan Perius. Todos os direitos reservados.</p>
     </div>
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-' + lang + ']').forEach(function(el) {
+                if (el.id === 'contact') {
+                    el.querySelector('.label').textContent = el.getAttribute('data-' + lang);
+                } else if (el.tagName === 'A') {
+                    el.textContent = el.getAttribute('data-' + lang);
+                } else {
+                    el.textContent = el.getAttribute('data-' + lang);
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(function(btn) { btn.classList.remove('active'); });
+            if (lang === 'pt') {
+                document.querySelectorAll('.lang-btn')[0].classList.add('active');
+            } else {
+                document.querySelectorAll('.lang-btn')[1].classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
