@@ -86,3 +86,4 @@ apester.com, 2212, RESELLER
 acexchange.co.kr, 1562884725, RESELLER
 mman.kr, 32102, RESELLER
 myfeature.tv, N1fNlXquFCVDX3gt6MJN, RESELLER
+google.com, pub-3170956843851333, DIRECT, f08c47fec0942fa0
