@@ -119,3 +119,10 @@ freewheel.tv, 536359-r-523319, RESELLER
 adform.com, 3354, RESELLER, 9f5210a2f0999e32
 # PubMatic (seller ID 159855)
 pubmatic.com, 159855, DIRECT, 5d62403b186f2ace
+# OpenX (seller ID 667542452)
+openx.com, 667542452, DIRECT, 6a698e2ec38604c6
+# Equativ / Sharethrough (seller ID 4194)
+smartadserver.com, 4194-OB, RESELLER, 060d053dcf45cbf3
+smartadserver.com, 4194, RESELLER, 060d053dcf45cbf3
+sharethrough.com, 4194-OB, RESELLER, 060d053dcf45cbf3
+sharethrough.com, 4194, RESELLER, 060d053dcf45cbf3
